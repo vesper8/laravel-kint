@@ -1,4 +1,4 @@
-Seamless Laravel / Kint Integration
+Seamless Laravel 5 / Kint Integration
 ============
 
 I love Kint, but it's a little hard to get it to work perfectly within Laravel. This plugin solves that.

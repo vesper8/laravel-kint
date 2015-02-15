@@ -3,7 +3,7 @@
 	"description": "Seamless integration between Laravel and Kint.",
 	"license": "MIT",
 	"homepage": "https://smartersoftware.net/packages/laravel-kint",
-	"keywords": ["laravel", "kint", "laravel5", "laravel4"],
+	"keywords": ["laravel", "kint", "laravel5"],
 	"authors": [
 		{
 			"name": "Robert Conner",
