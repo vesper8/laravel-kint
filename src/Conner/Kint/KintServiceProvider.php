@@ -14,14 +14,11 @@ class KintServiceProvider extends ServiceProvider {
 
 	public function boot() {
 		$this->package('rtconner/laravel-kint', 'laravel-kint');
-	}
-	
-	public function register()
-	{
-		if(!$configs = \Config::get('kint')) {
-			$configs = (array) \Config::get('laravel-kint');
-		}
 		
+		if(!$configs = \Config::get('kint')) {
+			$configs = (array) \Config::get('laravel-kint::kint');
+		}
+
 		foreach($configs as $key => $val) {
 			if($key == 'enabled') {
 				\Kint::enabled($val);
@@ -30,5 +27,8 @@ class KintServiceProvider extends ServiceProvider {
 			}
 		}
 	}
+	
+	public function register()
+	{}
 	
 }
