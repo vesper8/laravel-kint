@@ -3,6 +3,9 @@ Seamless Laravel 5 / Kint Integration
 
 I love Kint, but it's a little hard to get it to work perfectly within Laravel. This plugin solves that.
 
+[Laravel 5 Documentation](https://github.com/rtconner/laravel-kint/tree/laravel-5)  
+[Laravel 4 Documentation](https://github.com/rtconner/laravel-kint/tree/laravel-4)
+
 ### Installation
 
     composer require rtconner/laravel-kint dev-laravel-5
