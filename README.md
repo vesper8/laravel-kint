@@ -1,11 +1,14 @@
-Seamless Laravel / Kint Integration
+Seamless Laravel 4 / Kint Integration
 ============
 
 I love Kint, but it's a little hard to get it to work perfectly within Laravel. This plugin solves that.
 
+[Laravel 5 Documentation](https://github.com/rtconner/laravel-kint/tree/laravel-5)  
+[Laravel 4 Documentation](https://github.com/rtconner/laravel-kint/tree/laravel-4)
+
 ### Installation
 
-    composer require rtconner/laravel-kint dev-master
+    composer require rtconner/laravel-kint dev-laravel-4
 
 ```php
 'providers' => array(
@@ -13,14 +16,12 @@ I love Kint, but it's a little hard to get it to work perfectly within Laravel. 
 );
 ```
 
-    php artisan vendor:publish
-
 ### Usage
 
 Use Kint as you would normally.
 
 ```php
-d($var); // debug dump
+d($var); // dump
 
 ddd($var); // debug dump and die
 
@@ -31,6 +32,7 @@ sd($var); // string print and die
 
 ### Configure
 
-    php artisan vendor:publish
+    php artisan config:publish rtconner/laravel-kint
+	# alternatively you could manually create app/config/kint.php
 
-Edit config/kint.php to configure Kint settings. See [Kint documentation](http://raveren.github.io/kint/) for details on configuration options.
+See [Kint documentation](http://raveren.github.io/kint/) for details on configuration options.
