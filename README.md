@@ -8,7 +8,7 @@ I love Kint, but it's a little hard to get it to work perfectly within Laravel. 
 
 ### Installation
 
-    composer require rtconner/laravel-kint dev-laravel-4
+    composer require rtconner/laravel-kint ~0.0
 
 ```php
 'providers' => array(
