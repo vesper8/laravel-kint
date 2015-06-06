@@ -12,7 +12,7 @@
 	],
 	"require": {
 		"php": "~5.3",
-		"raveren/kint": "~0.9.1"
+		"raveren/kint": "~1.0"
 	},
 	"autoload": {
 		"files": ["src/laravel-kint.php"],
