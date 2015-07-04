@@ -15,7 +15,6 @@
 		"raveren/kint": "~1.0"
 	},
 	"autoload": {
-		"files": ["src/laravel-kint.php"],
 		"psr-0": {
 			"Conner\\Kint\\": "src/"
 		}
