@@ -19,14 +19,15 @@ return array(
 	'displayCalledFrom' => true,
 	
 	'fileLinkFormat' => ini_get('xdebug.file_link_format'),
-	
+
 	/*
-	 * This abbreviates file paths. Comment it out to display full paths on debug traces.
-	 */
+	 * The file paths displayed within debug traces
+	*/
 	'appRootDirs' => array(
-		base_path()=>'ROOT'
+		base_path()=>'.', // just display a period at application root
+		// 		base_path()=>true, // display the full path to file
 	),
-	
+
 	'maxStrLength' => 80,
 	
 	'charEncodings' => array(),
@@ -37,7 +38,7 @@ return array(
 
 	/*
 	 * Allows you to use these in blade templates:
-	 * @d($var); @ddd($var); @sd($var); @s($var); @dd($var)
+	 * @d($var) @ddd($var) @sd($var) @s($var) @dd($var)
 	 */
 	'blade_directives' => true,
 	
