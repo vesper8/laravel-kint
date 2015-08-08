@@ -11,15 +11,19 @@ I love Kint, but it's a little hard to get it to work perfectly within Laravel. 
 
 ### Installation
 
+Install with composer
+
     composer require rtconner/laravel-kint "~1.0"
 
-Add this to `config/app.php`
+Then add this to `config/app.php`
 
 ```php
 'providers' => array(
 	'Conner\Kint\KintServiceProvider',
 );
 ```
+
+Optionally setup the [config/kint.php](config/kint.php) file
 
     php artisan vendor:publish
 
@@ -37,7 +41,7 @@ s($var); // simple print
 sd($var); // simple print and die
 ```
 
-There is an also an added feature to allow you to easily call dump variables from within **blade templates**.
+There is an also an added feature to allow you to easily dump variables from within **blade templates**.
 Notice no semi-colon at the end, and must be on their own line of code.
 
 ```
