@@ -35,16 +35,17 @@ s($var); // string print
 sd($var); // string print and die
 ```
 
-There is an also an added feature to allow you to easily call dump variables from within blade templates.
+There is an also an added feature to allow you to easily call dump variables from within *blade templates*.
+Notice no semi-colon at the end, and must be on their own line of code.
 
 ```
-@d($var);
+@d($var)
 
-@ddd($var);
+@ddd($var)
 
-@sd($var);
+@sd($var)
 
-@s($var);
+@s($var)
 ```
 
 ### Configure
@@ -60,7 +61,7 @@ See [Kint documentation](http://raveren.github.io/kint/) for details on configur
 
 ### How Do I Override Laravel's dd() method?
 
-You will have to edit the `public/index.php` file in your app. Place the following code directly after 
+There is no clean way. You will have to edit `public/index.php` file in your app. Place the following code directly after 
 `require __DIR__.'/../bootstrap/autoload.php';`
 
 ```php
@@ -81,4 +82,4 @@ function dd()
 
  - Robert Conner - http://smartersoftware.net
 
-Copyright 2014 Robert Conner, You may use this code under The MIT License (MIT)
+Copyright 2015 Robert Conner, You may use this code under The MIT License (MIT)

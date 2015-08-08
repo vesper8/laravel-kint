@@ -13,16 +13,26 @@ class KintServiceProvider extends ServiceProvider {
 	 * Indicates if loading of the provider is deferred.
 	 */
 	protected $defer = false;
-
-	public function register()
+	
+	/**
+	 * Bootstrap the application events.
+	 */
+	public function boot()
 	{
 		$this->publishes([
 			__DIR__.'/../config/kint.php' => config_path('kint.php'),
 		]);
 		
+		$this->bootBladeDirectives();
+	}
+	
+	/**
+	 * (non-PHPdoc)
+	 * @see \Illuminate\Support\ServiceProvider::register()
+	 */
+	public function register()
+	{
 		$this->registerConfigs();
-		
-		$this->registerBladeDirectives();
 	}
 	
 	protected function registerConfigs()
@@ -38,16 +48,24 @@ class KintServiceProvider extends ServiceProvider {
 		}
 	}
 	
-	protected function registerBladeDirectives()
+	protected function bootBladeDirectives()
 	{
 		if(config('kint.blade_directives')) {
-			$functions = Kint::$aliases['functions'];
-			
-			foreach($functions as $function) {
-				Blade::directive($function, function($variable) use ($function) {
-					return "<?php echo $function($variable); ?>";
-				});
-			}
+			Blade::directive('d', function($variable) {
+				return "<?php echo d($variable); ?>";
+			});
+ 			Blade::directive('dd', function($variable) {
+ 				return "<?php echo dd($variable); ?>";
+ 			});
+ 			Blade::directive('ddd', function($variable) {
+ 				return "<?php echo ddd($variable); ?>";
+ 			});
+ 			Blade::directive('s', function($variable) {
+ 				return "<?php echo s($variable); ?>";
+ 			});
+ 			Blade::directive('sd', function($variable) {
+ 				return "<?php echo sd($variable); ?>";
+ 			});
 		}
 	}
 	
