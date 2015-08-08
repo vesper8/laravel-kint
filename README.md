@@ -67,14 +67,12 @@ See [Kint documentation](http://raveren.github.io/kint/) for details on configur
 
 ### How Do I Override Laravel's dd() method?
 
-There is no clean way. You will have to edit `public/index.php` file in your app. Place the following code directly after 
+There is no clean way. You will have to edit the `public/index.php` file in your app. Place the following code directly after 
 `require __DIR__.'/../bootstrap/autoload.php';`
 
 ```php
 /**
- * Override Laravel's built-in dd() method. Instead call Kint::dump()
- * 
- * @return string
+ * Override Laravel's built-in dd() method to call Kint::dump()
  */
 function dd()
 {
