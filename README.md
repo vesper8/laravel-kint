@@ -18,9 +18,9 @@ Install with composer
 Then add this to `config/app.php`
 
 ```php
-'providers' => array(
+'providers' => [
 	'Conner\Kint\KintServiceProvider',
-);
+];
 ```
 
 Optionally setup the [config/kint.php](config/kint.php) file
