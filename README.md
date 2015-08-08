@@ -13,7 +13,7 @@ I love Kint, but it's a little hard to get it to work perfectly within Laravel. 
 
 Install with composer
 
-    composer require rtconner/laravel-kint "~1.0"
+    composer require rtconner/laravel-kint "~2.0"
 
 Then add this to `config/app.php`
 
