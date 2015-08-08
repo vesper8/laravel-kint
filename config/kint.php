@@ -30,11 +30,15 @@ return array(
 
 	'maxStrLength' => 80,
 	
-	'charEncodings' => array(),
-
 	'maxLevels' => 5,
 
 	'theme' => 'original',
+		
+	'expandedByDefault'=>false,
+		
+	'cliDetection'=>true,
+
+	'cliColors'=>true,
 
 	/*
 	 * Allows you to use these in blade templates:
