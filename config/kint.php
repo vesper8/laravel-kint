@@ -9,7 +9,7 @@
 |
 */
 
-return array(
+return [
 
 	/*
 	 * If set to false, Kint will become silent
@@ -46,4 +46,4 @@ return array(
 	 */
 	'blade_directives' => true,
 	
-);
+];
