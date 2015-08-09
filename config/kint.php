@@ -25,7 +25,7 @@ return [
 	*/
 	'appRootDirs' => array(
 		base_path()=>'.', // just display a period at application root
-		// 		base_path()=>true, // display the full path to file
+// 		base_path()=>base_path(), // display the full path
 	),
 
 	'maxStrLength' => 80,
