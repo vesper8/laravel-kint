@@ -14,7 +14,7 @@ return [
 	/*
 	 * If set to false, Kint will become silent
 	 */ 
-	'enabled' => true, // env('APP_DEBUG'), 
+	'enabled' => true, // I suggest replacing true with env('APP_DEBUG'), 
 
 	'displayCalledFrom' => true,
 	
