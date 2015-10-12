@@ -38,6 +38,10 @@ class KintServiceProvider extends ServiceProvider {
 	protected function registerConfigs()
 	{
 		$configs = config('kint');
+
+		if(empty($configs)) {
+			return;
+		}
 		
 		foreach($configs as $key => $val) {
 			if($key == 'enabled') {
