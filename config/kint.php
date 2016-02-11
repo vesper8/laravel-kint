@@ -13,6 +13,8 @@ return [
 
 	/*
 	 * If set to false, Kint will become silent
+	 * `true` will enable Kint::MODE_PLAIN by default
+	 * set to Kint::MODE_RICH to enable rich mode
 	 */ 
 	'enabled' => true, // I suggest replacing true with env('APP_DEBUG'), 
 
