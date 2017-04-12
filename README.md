@@ -6,7 +6,7 @@ Seamless Laravel 5 / Kint Integration
 
 I love Kint, but it's a little hard to get it to work perfectly within Laravel. This plugin solves that, and adds some new features as well.
 
-[Laravel 5 Documentation](https://github.com/rtconner/laravel-kint/tree/laravel-5)  
+[Laravel 5 Documentation](https://github.com/rtconner/laravel-kint/tree/laravel-5)
 [Laravel 4 Documentation](https://github.com/rtconner/laravel-kint/tree/laravel-4)
 
 ### Installation
@@ -62,12 +62,12 @@ To enable configuration first create the `config/kint.php` file in your app.
 
 [See config/kint.php](config/kint.php) for configuration options.
 
-See [Kint documentation](http://raveren.github.io/kint/) for details on configuration options.
+See [Kint documentation](https://github.com/kint-php/kint) for details on configuration options.
 
 
 ### How Do I Override Laravel's dd() method?
 
-There is no clean way. You will have to edit the `public/index.php` file in your app. Place the following code directly after 
+There is no clean way. You will have to edit the `public/index.php` file in your app. Place the following code directly after
 `require __DIR__.'/../bootstrap/autoload.php';`
 
 ```php
