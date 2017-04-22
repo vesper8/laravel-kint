@@ -44,8 +44,10 @@ class KintServiceProvider extends ServiceProvider {
 		}
 		
 		foreach($configs as $key => $val) {
-			if($key == 'enabled') {
-				Kint::enabled($val);
+			if($key == 'strlen_max') {
+				Kint_Renderer_Rich::$strlen_max = $val;
+			} elseif($key == 'theme') {
+				Kint_Renderer_Rich::$theme = $val;
 			} elseif(property_exists('Kint', $key)) {
 				Kint::$$key = $val;
 			}
@@ -58,17 +60,8 @@ class KintServiceProvider extends ServiceProvider {
 			Blade::directive('d', function($variable) {
 				return "<?php echo d($variable); ?>";
 			});
- 			Blade::directive('dd', function($variable) {
- 				return "<?php echo dd($variable); ?>";
- 			});
- 			Blade::directive('ddd', function($variable) {
- 				return "<?php echo ddd($variable); ?>";
- 			});
  			Blade::directive('s', function($variable) {
  				return "<?php echo s($variable); ?>";
- 			});
- 			Blade::directive('sd', function($variable) {
- 				return "<?php echo sd($variable); ?>";
  			});
 		}
 	}
