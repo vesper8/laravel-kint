@@ -3,12 +3,13 @@
 use Illuminate\Support\ServiceProvider;
 use Blade;
 use Kint;
+use Kint_Renderer_Rich;
 
 /**
  * Copyright (C) 2015 Robert Conner
  */
-class KintServiceProvider extends ServiceProvider {
-
+class KintServiceProvider extends ServiceProvider
+{
 	/**
 	 * Indicates if loading of the provider is deferred.
 	 */
