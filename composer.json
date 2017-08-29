@@ -19,5 +19,12 @@
 			"Conner\\Kint\\": "src/"
 		}
 	},
+	"extra": {
+		"laravel": {
+		    "providers": [
+			"Conner\\Kint\\KintServiceProvider"
+		    ]
+		}
+	},
 	"minimum-stability": "dev"
 }
