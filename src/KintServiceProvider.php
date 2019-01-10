@@ -1,70 +1,65 @@
-<?php namespace Conner\Kint;
+<?php
+
+namespace Conner\Kint;
 
 use Illuminate\Support\ServiceProvider;
 use Blade;
 use Kint;
-use Kint_Renderer_Rich;
 
 /**
  * Copyright (C) 2015 Robert Conner
  */
 class KintServiceProvider extends ServiceProvider
 {
-	/**
-	 * Indicates if loading of the provider is deferred.
-	 */
-	protected $defer = false;
-	
-	/**
-	 * Bootstrap the application events.
-	 */
-	public function boot()
-	{
-		$this->publishes([
-			__DIR__.'/../config/kint.php' => config_path('kint.php'),
-		]);
-		
-		$this->bootBladeDirectives();
-	}
-	
-	/**
-	 * (non-PHPdoc)
-	 * @see \Illuminate\Support\ServiceProvider::register()
-	 */
-	public function register()
-	{
-		$this->registerConfigs();
-	}
-	
-	protected function registerConfigs()
-	{
-		$configs = config('kint');
+    /**
+     * Indicates if loading of the provider is deferred.
+     */
+    protected $defer = false;
 
-		if(empty($configs)) {
-			return;
-		}
-		
-		foreach($configs as $key => $val) {
-			if($key == 'strlen_max') {
-				Kint_Renderer_Rich::$strlen_max = $val;
-			} elseif($key == 'theme') {
-				Kint_Renderer_Rich::$theme = $val;
-			} elseif(property_exists('Kint', $key)) {
-				Kint::$$key = $val;
-			}
-		}
-	}
-	
-	protected function bootBladeDirectives()
-	{
-		if(config('kint.blade_directives')) {
-			Blade::directive('d', function($variable) {
-				return "<?php echo d($variable); ?>";
-			});
- 			Blade::directive('s', function($variable) {
- 				return "<?php echo s($variable); ?>";
- 			});
-		}
-	}
-	
+    /**
+     * Bootstrap the application events.
+     */
+    public function boot()
+    {
+        $this->publishes([
+            __DIR__ . '/../config/kint.php' => config_path('kint.php'),
+        ]);
+
+        $this->bootBladeDirectives();
+    }
+
+    /**
+     * (non-PHPdoc)
+     * @see \Illuminate\Support\ServiceProvider::register()
+     */
+    public function register()
+    {
+        $this->registerConfigs();
+    }
+
+    protected function registerConfigs()
+    {
+        $configs = config('kint');
+        if (empty($configs)) {
+            return;
+        }
+
+        foreach ($configs as $key => $val) {
+            if (property_exists('Kint', $key)) {
+                Kint::$$key = $val;
+            }
+        }
+    }
+
+    protected function bootBladeDirectives()
+    {
+        if (config('kint.blade_directives')) {
+            Blade::directive('d', function ($variable) {
+                return "<?php echo d($variable); ?>";
+            });
+            Blade::directive('s', function ($variable) {
+                return "<?php echo s($variable); ?>";
+            });
+        }
+    }
 }
